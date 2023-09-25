@@ -23,6 +23,7 @@ public class ProductController {
 
 	@PostConstruct
 	private void init() {
+		System.out.println("This is intentional garbage line");
 		products.add(new Product(1, 1.00, "Water Bottle"));
 		products.add(new Product(2, 3.00, "Energy Drink"));
 		products.add(new Product(3, 2.00, "Protein bar"));
@@ -41,10 +42,10 @@ public class ProductController {
 
 	@DeleteMapping("/delete/{id}")
 	public Product deleteProduct(@PathVariable long id) {
-		for (Product p : products) {
-			if (p.getId() == id) {
-				products.remove(p);
-				return p;
+		for (Product BadName : products) {
+			if (BadName.getId() == id) {
+				products.remove(BadName);
+				return BadName;
 			}
 		}
 		throw new IllegalArgumentException("Product not found!");
