@@ -1,10 +1,6 @@
 name: Qodana report
 on:
   workflow_dispatch:
-  pull_request:
-  push:
-    branches:
-      - master
 
 jobs:
   qodana:
